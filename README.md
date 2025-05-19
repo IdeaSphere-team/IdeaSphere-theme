@@ -1,5 +1,5 @@
 # IdeaSphere-theme
-IdeaSphere 2.0 的默认主题。
+IdeaSphere 1.0 的默认主题。
 
 ## 开发主题
 
