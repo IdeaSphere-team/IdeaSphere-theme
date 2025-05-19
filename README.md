@@ -33,4 +33,4 @@ project.json 信息解释：
 - `templats`: 论坛html页面
 - `static`: 论坛html引用的css样式、js脚本、图片等文件
 
-5. 主题分发：将 `templates` 文件夹、 `static` 文件夹和 `project.json` 文件一起打包为 `zip`压缩包文件
+5. 主题分发：将 `templates` 文件夹、 `static` 文件夹、 `project.json` 文件、 `injector.json` 和 `material.json` 文件（如果需要修改相关功能则一并打包）一起打包为 `zip`压缩包文件
