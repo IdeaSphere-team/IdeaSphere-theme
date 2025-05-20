@@ -1,7 +1,8 @@
 {
   "name": "IdeaSphere",
   "author": "IdeaSphere-team",
+  "briefly": "IdeaSphere 官方主题",
   "website": "https://ideasphere.org",
-  "repository": "https://github.com/IdeaSphere-team/IdeaSphere-theme-template",
+  "repository": "https://github.com/IdeaSphere-team/IdeaSphere-theme",
   "logo": "static/img/logo.png"
 }

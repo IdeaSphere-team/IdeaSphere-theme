@@ -7,20 +7,22 @@ IdeaSphere 1.0 的默认主题。
 2. 修改 project.json 主题信息文件
 ```json
 {
-  "name": "IdeaSphere", 
-  "author": "IdeaSphere-team", 
-  "website": "https://ideasphere.org", 
-  "repository": "https://github.com/IdeaSphere-team/IdeaSphere-theme-template",  
-  "logo": "static/img/logo.png"  
+  "name": "IdeaSphere",
+  "author": "IdeaSphere-team",
+  "briefly": "IdeaSphere 官方主题",
+  "website": "https://ideasphere.org",
+  "repository": "https://github.com/IdeaSphere-team/IdeaSphere-theme",
+  "logo": "static/img/logo.png"
 }
 ```
 
 project.json 信息解释：
 - **name**: 必须，你的主题包名
 - **author**: 必须，主题开发者名称
+- **briefly**: 必须，主题包简述
 - **website**: 可选，主题网站
 - **repository**: 可选，主题开源仓库
-- **logo**: 必须，默认位置可不写具体路径，若不是默认位置则需写完整路径
+- **logo**: 必须，默认位置可不写具体路径，若不是默认位置则需修改路径
 
 3. `injector.json` 和 `material.json` 文件是可选配置文件
 
