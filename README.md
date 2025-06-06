@@ -28,7 +28,7 @@ project.json 信息解释：
 
 3. `injector.json` 和 `material.json` 文件是可选配置文件
 
-- **injector.json**: 配置某些功能页面注入到其他模板
+- **injector.json**: 配置某些功能页面注入到指定位置页面
 - **material.json**: 配置加载功能相对应的页面
 
 4. 修改 `templates` 和 `static` 文件夹下的文件
