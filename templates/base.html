@@ -9,26 +9,28 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Russo+One&display=swap">
-{#    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">#}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome-banner.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/active-users.css') }}">
+    {% if loader_wrapper %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/load.css') }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/backToTop.css') }}">
 </head>
 
 <body>
     <!-- 加载动画 -->
+    {% if loader_wrapper %}
     <div id="loaderWrapper" class="loader-wrapper">
         <div class="loader-container">
             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="IdeaSphere Logo" class="logo">
             <div class="loader"></div>
         </div>
     </div>
+    {% endif %}
 
     <div class="welcome-banner">
         <div class="container">
@@ -51,13 +53,10 @@
             </div>
         </div>
         <div class="nav-right">
-            <div class="search-box">
-                <input type="text" placeholder="搜索..." id="searchInput">
-                <i class="fas fa-search"></i>
-                <div class="search-results-popup" id="searchResultsPopup">
-                    <div class="search-results-content" id="searchResultsContent"></div>
-                </div>
-            </div>
+        <div class="search-box">
+            <input type="text" placeholder="搜索..." id="searchInput">
+            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
             {% if 'user_id' in session %}
             <div class="user-menu">
                 <a href="#" class="user-avatar">
@@ -154,17 +153,16 @@
     {% endif %}
 
     <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
-{#    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>#}
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/search.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // 检查是否是第一次访问
         const hasVisited = sessionStorage.getItem('hasVisited');
+        const loaderWrapper = document.getElementById('loaderWrapper');
 
-        if (!hasVisited) {
+        if (!hasVisited && loaderWrapper) {
             // 如果是第一次访问，显示加载动画
-            const loaderWrapper = document.getElementById('loaderWrapper');
             loaderWrapper.classList.add('visible');
 
             // 页面加载完成后2秒后隐藏加载动画
@@ -175,9 +173,8 @@
                     sessionStorage.setItem('hasVisited', 'true');
                 }, 2000);
             });
-        } else {
-            // 如果不是第一次访问，直接隐藏加载动画
-            const loaderWrapper = document.getElementById('loaderWrapper');
+        } else if (loaderWrapper) {
+            // 如果不是第一次访问或者 loader_wrapper 设置为 false，直接隐藏加载动画
             loaderWrapper.classList.remove('visible');
         }
     });
@@ -201,6 +198,14 @@
             top: 0,
             behavior: 'smooth'
         });
+    });
+
+    // 点击搜索页面跳转到专门的搜索页
+    document.getElementById('searchButton').addEventListener('click', function() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (query) {
+            window.location.href = `/search?keyword=${encodeURIComponent(query)}`;
+        }
     });
 </script>
     {% with messages = get_flashed_messages(with_categories=true) %}
