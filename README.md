@@ -12,7 +12,8 @@ IdeaSphere 1.0 的默认主题。
   "briefly": "IdeaSphere 官方主题",
   "website": "https://ideasphere.org",
   "repository": "https://github.com/IdeaSphere-team/IdeaSphere-theme",
-  "logo": "static/img/logo.png"
+  "logo": "static/img/logo.png",
+  "version": "1.0.0"
 }
 ```
 
@@ -23,11 +24,12 @@ project.json 信息解释：
 - **website**: 可选，主题网站
 - **repository**: 可选，主题开源仓库
 - **logo**: 必须，默认位置可不写具体路径，若不是默认位置则需修改路径
+- **version**: 必须，主题版本号
 
 3. `injector.json` 和 `material.json` 文件是可选配置文件
 
 - **injector.json**: 配置某些功能页面注入到其他模板
-- **material.json**: 配置限定加载某些功能页面
+- **material.json**: 配置加载功能相对应的页面
 
 4. 修改 `templates` 和 `static` 文件夹下的文件
 

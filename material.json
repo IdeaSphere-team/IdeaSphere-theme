@@ -1,0 +1,62 @@
+{
+  "base": "base.html",
+  "index": "index.html",
+  "404": "404.html",
+  "500": "500.html",
+  "install": "install.html",
+  "login": "login.html",
+  "register": "register.html",
+  "search": "search.html",
+  "admin": [
+    {
+      "base": "base.html",
+      "comments": "comments.html",
+      "dashboard": "dashboard.html",
+      "logs": "logs.html",
+      "posts": "posts.html",
+      "settings": "settings.html",
+      "sidebar": "sidebar.html",
+      "user_detail": "user_detail.html",
+      "users": "users.html"
+    }
+  ],
+  "moderation": [
+    {
+      "moderation_panel": "moderation_panel.html",
+      "moderation_report_pending": "moderation_report_pending.html",
+      "moderation_report_resolved": "moderation_report_resolved.html"
+    }
+  ],
+  "other": [
+    {
+      "about": "about.html",
+      "faq": "faq.html",
+      "privacy": "privacy.html",
+      "tos": "tos.html"
+    }
+  ],
+  "post": [
+    {
+      "edit_post": "edit_post.html",
+      "post": "post.html",
+      "view_post": "view_post.html"
+    }
+  ],
+  "section": [
+    {
+      "section_analytics": "section_analytics.html",
+      "section_create": "section_create.html",
+      "section_detail": "section_detail.html",
+      "section_edit": "section_edit.html",
+      "sections": "sections.html"
+    }
+  ],
+  "user": [
+    {
+      "user_activity_feed": "user_activity_feed.html",
+      "user_activity": "user_activity.html",
+      "user_posts": "user_posts.html",
+      "user_profile": "user_profile.html"
+    }
+  ]
+}
